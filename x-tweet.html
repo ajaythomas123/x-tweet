@@ -5,15 +5,15 @@
 <!-- TODO: Add documentation and examples. -->
 
 <dom-module id="x-tweet">
-  <template id="t" is:"dom-bind">
-    <div id="tweet"></div>
+  <template>
+    <div id="twitterTweet"></div>
   </template>
 </dom-module>
 <script>
   Polymer({
     is: 'x-tweet',
     properties: {
-      id: String,    
+      tweetid: String,    
       align: String,    
       cards: {
         type: String,
@@ -29,11 +29,10 @@
       },
       width: Number
     },
-
-    ready: function(id) {
+    ready: function(tweetid) {
       twttr.widgets.createTweet(
-        this.id,
-        this.$.tweet,
+        this.tweetid,
+        this.$.twitterTweet,
         {
           align: this.align,        
           cards: this.cards,
@@ -44,7 +43,6 @@
         }
       );
     },
-
     isExpanded: function(expand) {
       if (expand == "false") {
         return 'hidden';
