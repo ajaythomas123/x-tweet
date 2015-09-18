@@ -1,0 +1,27 @@
+{
+  "name": "x-tweet",
+  "version": "0.0.1",
+  "authors": [
+    "<Ajay Thomas <@ajaytmas>>"
+  ],
+  "description": "A custom polymer element for embedding tweets.",
+  "main": "x-tweet.html",
+  "keywords": [
+    "polymer",
+    "webcomponents",
+    "twitter",
+    "tweet",
+    "embed"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "polymer": "polymer/polymer#~1.1.3"
+  }
+}
