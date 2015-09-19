@@ -11,4 +11,3 @@ Install the component using [Bower](http://bower.io/):
 ```sh
  bower install ajaythomas123/x-tweet --save
 ```
-
