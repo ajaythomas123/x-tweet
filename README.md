@@ -9,5 +9,6 @@ See the [component page](http://ajaythomas123.github.io/x-tweet) for more inform
 Install the component using [Bower](http://bower.io/):
 
 ```sh
- bower install ajaythomas123/x-tweet --save
+$ bower install x-tweet --save
 ```
+Or [download as ZIP](https://github.com/ajaythomas123/x-tweet/archive/master.zip)
