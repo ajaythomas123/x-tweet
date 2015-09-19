@@ -8,7 +8,8 @@
   "main": "x-tweet.html",
   "keywords": [
     "polymer",
-    "webcomponents",
+    "web-component",
+    "web-components",
     "twitter",
     "tweet",
     "embed"
