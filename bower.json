@@ -2,7 +2,7 @@
   "name": "x-tweet",
   "version": "0.0.1",
   "authors": [
-    "<Ajay Thomas <@ajaytmas>>"
+    "<Ajay Thomas <ajaythomas123@gmail.com>>"
   ],
   "description": "A custom polymer element for embedding tweets.",
   "main": "x-tweet.html",
