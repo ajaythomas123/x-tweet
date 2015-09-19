@@ -1,4 +1,12 @@
-# x-tweet
-A custom polymer element for embedding tweets.
+# &lt;x-tweet&gt;
 
-Documentation will be added soon.
+See the [component page](http://ajaythomas123.github.io/x-tweet) for more information.
+
+## Install
+
+Install the component using [Bower](http://bower.io/):
+
+```sh
+ bower install ajaythomas123/x-tweet --save
+```
+
