@@ -1,0 +1,102 @@
+<link rel="import" href="../polymer/polymer.html">
+<link rel="import" href="widget-import.html">
+
+<!-- TODO: Add styling. -->
+<!--
+Embeds a tweet on the page using the [Twitter API](https://dev.twitter.com/web/embedded-tweets/javascript-create).
+
+<b>Example - basic</b>
+
+    <x-tweet tweetid="{{tweetId}}"></x-tweet>
+
+@demo
+-->
+<dom-module id="x-tweet">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+    </style>
+    <div id="twitterTweet"></div>
+  </template>
+</dom-module>
+<script>
+  Polymer({
+    is: 'x-tweet',
+    properties: {
+      /**
+       * The numerical ID of the desired tweet. **Required**
+       */
+      tweetid: String,
+
+      /**
+       * Float the Tweet *left*, *right*, or *center* relative to its container.
+       */
+      align: String,    
+      _cards: {
+        type: String,
+        computed: '_isExpanded(expand)',
+        value: ''
+      },
+
+      /**
+       * When set to *none*, only the cited Tweet will be displayed even if it is
+       * in reply to another Tweet.
+       */
+      conversation: String,
+
+      /**
+       * If *false*, links in a Tweet are not expanded to photo, video, or link
+       * previews.
+       */
+      expand: {
+        type: String,
+        value: 'true'
+      },
+
+      /**
+       * Loads text components in the specified language. [Twitter language code](https://dev.twitter.com/overview/general/adding-international-support-to-your-apps).
+       *
+       * **Note**: does not affect the text of the cited Tweet.
+       */
+      lang: String,
+
+      /**
+       * When set to *dark*, displays Tweet with light text over a dark
+       * background.
+       */
+      theme: {
+        type: String,
+        value: 'light'
+      },
+
+      /**
+       * The maximum width of the rendered Tweet in whole pixels. This value
+       * should be between 250 and 550 pixels.
+       */
+      width: Number
+    },
+    ready: function(tweetid) {
+      twttr.widgets.createTweet(
+        this.tweetid,
+        this.$.twitterTweet,
+        {
+          align: this.align,        
+          cards: this._cards,
+          conversation: this.conversation,
+          lang: this.lang,
+          theme: this.theme,
+          width: this.width
+        }
+      );
+    },
+
+    /** @return {string} Returns *hidden* if expand is false. */
+    _isExpanded: function(expand) {
+      if (expand == "false") {
+        return 'hidden';
+      }
+    }
+  });
+</script>
